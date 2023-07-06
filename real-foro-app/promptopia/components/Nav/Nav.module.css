@@ -1,0 +1,37 @@
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;
+  padding-top: 2%;
+}
+
+.logoTitle {
+  max-width: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #000;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.btnPost{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #202020;
+  color: white;
+  text-decoration: none;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  border-radius: 500px;
+  transition: all .5s ease;
+
+}
+
+.btnPost:hover{
+  transform: scale(1.03);
+}
