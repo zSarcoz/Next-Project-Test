@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 0.1vh;
+  background: transparent !important;
+}
+
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
@@ -63,7 +68,7 @@
   height: 100%;
   filter: blur(100px) saturate(250%);
   top: 0px;
-  opacity: 0.25;
+  opacity: 0.3;
 }
 
 @media screen and (max-width: 640px) {
@@ -107,15 +112,15 @@
 }
 
 .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white/30 backdrop-blur-lg  py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0 focus:bg-white/70;
+  @apply block w-full rounded-md border border-gray-200 bg-white/30 backdrop-blur-lg  py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:outline-none focus:ring-0 focus:bg-white/70;
 }
 
-.search_input{
-  transition: all .4s ease;
+.search_input {
+  transition: all 0.4s ease;
 }
-.search_input:hover{
+.search_input:hover {
   transform: scale(1.1);
-  @apply bg-white/60
+  @apply bg-white/60;
 }
 
 .copy_btn {
@@ -162,11 +167,11 @@
   @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/10 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
 
-.prompt_card{
-transition: all .4s ease;
+.prompt_card {
+  transition: all 0.4s ease;
 }
-.prompt_card:hover{
-transform: scale(1.05)
+.prompt_card:hover {
+  transform: scale(1.05);
 }
 
 .flex-center {
@@ -183,4 +188,17 @@ transform: scale(1.05)
 
 .flex-between {
   @apply flex justify-between items-center;
+}
+
+.tooltip {
+  background-color: rgba(48, 48, 48, 0.644);
+  color: white;
+}
+
+.profileImg {
+  margin: 0%;
+  transition: all 0.4s ease;
+}
+.profileImg:hover {
+  transform: scale(1.2);
 }

@@ -3,18 +3,32 @@
 import { useState, useEffect } from "react";
 
 import PromptCard from "./PromptCard";
+import { motion } from "framer-motion";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-16 prompt_layout'>
-      {data.map((post) => (
-        <PromptCard
-          key={post._id}
-          post={post}
-          handleTagClick={handleTagClick}
-        />
-      ))}
-    </div>
+    <>
+      {data ? (
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 4 }}
+          className="mt-16 prompt_layout"
+        >
+          {data.map((post) => (
+            <PromptCard
+              key={post._id}
+              post={post}
+              handleTagClick={handleTagClick}
+            />
+          ))}
+        </motion.div>
+      ) : (
+        <div>
+          <h1>Any Post</h1>
+        </div>
+      )}
+    </>
   );
 };
 
@@ -68,17 +82,22 @@ const Feed = () => {
   };
 
   return (
-    <section className='feed'>
-      <form className='relative w-full flex-center'>
+    <section className="feed">
+      <motion.form
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 3.5 }}
+        className="relative w-full flex-center"
+      >
         <input
-          type='text'
-          placeholder='Search for a Tag or a Username'
+          type="text"
+          placeholder="Search for a Tag or a Username"
           value={searchText}
           onChange={handleSearchChange}
           required
-          className='search_input peer'
+          className="search_input peer"
         />
-      </form>
+      </motion.form>
 
       {/* All Prompts */}
       {searchText ? (

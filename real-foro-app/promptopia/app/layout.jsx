@@ -2,6 +2,8 @@ import "@styles/globals.css";
 
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
+// import { motion } from "framer-motion";
+
 
 export const metadata = {
   title: "Promptopia",
