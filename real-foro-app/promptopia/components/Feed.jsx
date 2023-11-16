@@ -12,7 +12,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 4 }}
+          transition={{ delay: 2 }}
           className="mt-16 prompt_layout"
         >
           {data.map((post) => (
@@ -52,7 +52,7 @@ const Feed = () => {
   }, []);
 
   const filterPrompts = (searchtext) => {
-    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    const regex = new RegExp(searchtext, "i");
     return allPosts.filter(
       (item) =>
         regex.test(item?.creator?.username) ||
@@ -86,7 +86,7 @@ const Feed = () => {
       <motion.form
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3.5 }}
+        transition={{ delay: 1.8 }}
         className="relative w-full flex-center"
       >
         <input

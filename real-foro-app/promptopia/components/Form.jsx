@@ -5,17 +5,17 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className="w-full max-w-full flex-start flex-col">
       <motion.h1
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -50, scale:0.5 }}
+        animate={{ opacity: 1, x: 0, scale:1 }}
         transition={{ delay: 0.2}}
         className="head_text text-left"
       >
         <span className="blue_gradient">{type} Post</span>
       </motion.h1>
       <motion.p
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
+        initial={{ opacity: 0, y: 50, scale:0.5 }}
+        animate={{ opacity: 1, y: 0, scale:1 }}
+        transition={{ delay: 0.5 }}
         className="desc text-left max-w-md"
       >
         {type} and share amazing prompts with the world, and let your
@@ -25,7 +25,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       <motion.form
         initial={{ opacity: 0, y: 100, scale: 0 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 0.8 }}
         onSubmit={handleSubmit}
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
       >
@@ -33,7 +33,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <motion.span
             initial={{ opacity: 0, y: -50, scale: 0 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 1.5 }}
+            transition={{ delay: 1 }}
             className="font-satoshi font-semibold text-base text-gray-700"
           >
             Your AI Prompt
@@ -42,7 +42,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <motion.textarea
             initial={{ opacity: 0, y: 20, scale: 0 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 1.8 }}
+            transition={{ delay: 1.3 }}
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder="Write your post here"
@@ -55,7 +55,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <motion.span
             initial={{ opacity: 0, y: -50, scale: 0 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 2.1 }}
+            transition={{ delay: 1.6 }}
             className="font-satoshi font-semibold text-base text-gray-700"
           >
             Field of Prompt{" "}
@@ -66,7 +66,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <motion.input
             initial={{ opacity: 0, y: 20, scale: 0 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 2.3 }}
+            transition={{ delay: 1.9 }}
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
             type="text"
@@ -79,7 +79,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <motion.div
           initial={{ opacity: 0, y: 10, x: -100, scale: 0 }}
           animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
-          transition={{ delay: 2.8 }}
+          transition={{ delay: 2.1 }}
           className="flex-end mx-3 mb-5 gap-4"
         >
           <Link href="/" className="text-gray-500 text-sm">
